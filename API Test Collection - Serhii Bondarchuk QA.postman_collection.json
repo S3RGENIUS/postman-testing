@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "a09228e8-9af8-464f-8e33-ae98ed313c4b",
+		"name": "Ringostat API Test Collection - Serhii Bondarchuk QA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38776008"
+	},
+	"item": [
+		{
+			"name": "1. Export Call Log – calls/list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-key",
+						"value": "?",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.ringostat.net/calls/list?export_type=json&from=2024-01-01 00:00:00&to=2025-02-02 00:00:00&fields=calldate,caller,dst,disposition,billsec,utm_source,utm_medium,recording",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ringostat",
+						"net"
+					],
+					"path": [
+						"calls",
+						"list"
+					],
+					"query": [
+						{
+							"key": "export_type",
+							"value": "json"
+						},
+						{
+							"key": "from",
+							"value": "2024-01-01 00:00:00"
+						},
+						{
+							"key": "to",
+							"value": "2025-02-02 00:00:00"
+						},
+						{
+							"key": "fields",
+							"value": "calldate,caller,dst,disposition,billsec,utm_source,utm_medium,recording"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Callback Between Numbers – callback/outward_call",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Auth-key",
+						"value": "?",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "extension",
+							"value": "38044290343",
+							"type": "text"
+						},
+						{
+							"key": "destination",
+							"value": "380671112233",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.ringostat.net/callback/outward_call",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ringostat",
+						"net"
+					],
+					"path": [
+						"callback",
+						"outward_call"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Check SIP Online – sipstatus/online",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Auth-key",
+						"value": "?",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.ringostat.net/sipstatus/online",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ringostat",
+						"net"
+					],
+					"path": [
+						"sipstatus",
+						"online"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
